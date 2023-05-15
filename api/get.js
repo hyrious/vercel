@@ -10,7 +10,11 @@ export default async function handler(req, res) {
 
   const HTTP = url.startsWith('https') ? https : http
   HTTP.get(url, (proxyRes) => {
-    res.writeHead(proxyRes.statusCode, proxyRes.headers)
+    const headers = proxyRes.headers
+    headers['access-control-allow-origin'] = '*'
+    headers['access-control-allow-methods'] = 'GET'
+    headers['access-control-allow-headers'] = 'Origin, Content-Type, Accept'
+    res.writeHead(proxyRes.statusCode, headers)
     proxyRes.pipe(res, { end: true })
   })
 }
