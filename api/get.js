@@ -5,7 +5,8 @@ import https from 'node:https'
 export default async function handler(req, res) {
   const url = req.query.url || req.body
   if (!url) {
-    return res.status(400).send('missing url')
+    res.status(400).send('missing url')
+    return
   }
 
   const HTTP = url.startsWith('https') ? https : http

@@ -1,0 +1,12 @@
+{
+  "include": ["api/*"],
+  "compilerOptions": {
+    "checkJs": true,
+    "noEmit": true,
+    "lib": ["ESNext"],
+    "types": ["node"],
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "esModuleInterop": true
+  }
+}

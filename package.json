@@ -1,5 +1,11 @@
 {
+  "type": "module",
   "devDependencies": {
-    "@vercel/node": "^2.14.2"
+    "@types/node": "^18.16.10",
+    "@vercel/node": "^2.14.2",
+    "undici": "^5.22.1"
+  },
+  "dependencies": {
+    "anafanafo": "^2.0.0"
   }
 }
